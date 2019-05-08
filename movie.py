@@ -14,9 +14,7 @@ async def on_ready():
     print(app.user.name)
     print(app.user.id)
     print("=============")
-    print(discord.__version__)
-    game = discord.Game("도움말을 받으려면 m!help ")
-    await app.change_presence(status=discord.Status.idle, activity=game)
+    await app.change_presence(game=discord.Game(name="도움말을 받으려면 m!help ", type=1))
 
 
 @app.event
