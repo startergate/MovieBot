@@ -6,7 +6,7 @@ import datetime
 
 app = discord.Client()
 
-token = 'NTc1MzE4NzczNDEwNTYyMDQ4.XNLdUw.rWFO7h2N_nrtsrq1dyMzhZ9ZJAE'
+token = 'ㅅㅂ'
 
 
 @app.event
