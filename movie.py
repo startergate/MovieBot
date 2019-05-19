@@ -49,5 +49,20 @@ async def on_message(message):
 
             await app.send_message(message.channel, embed=em)
             return
+        if len(msg) == 2:
+            if msg[1].lower() in ['us', 'usa']:
+                boxoffice = requests.get('https://www.boxofficemojo.com/daily/chart/?view=1day&sortdate={}'.format(boxofficeTime.strftime('%Y-%m-%d')))
+                boxoffice = BeautifulSoup(boxoffice.text, 'html.parser')
+
+                movies = boxoffice.select('#body > center > center > table > tbody > tr:nth-child(2) > td > table > tbody > tr')
+                isStarted = False
+                for movie in movies:
+                    if not isStarted:
+                        isStarted = True
+                        continue
+                    movie = movie.find('td')
+                    
+
+
 
 app.run(token)
